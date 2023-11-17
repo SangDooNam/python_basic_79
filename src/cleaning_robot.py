@@ -29,12 +29,14 @@ class CleaningRobot:
         log = ""
         log += self.unlock_door()
         log += self.enter_door()
-        log += self.lock_door()
+        # log += self.lock_door()
         return log
 
     def when_encounter_outer_door(self):
         log = ""
+        log += self.unlock_door()
         log += self.turn_around()
+        # log += self.enter_door()
         return log
 
     def when_encounter_prisoner(self):
@@ -43,5 +45,21 @@ class CleaningRobot:
 
     def when_encounter_guard(self):
         log = ""
-        log += self.turn_around()
+        # log += self.turn_around()
         return log
+
+
+# mode_activating = CleaningRobot(testing_mode=True)
+# inner_door = mode_activating.when_encounter_inner_door()
+# outer_door = mode_activating.when_encounter_outer_door()
+# print(mode_activating.when_encounter_outer_door())
+
+# if ('Door unlocked.' not in outer_door) or ('Turn around.' not in outer_door):
+#     print(True)
+# else:
+#     print(False)
+    
+    
+# if 'Door unlocked' is not in outer_door and 'Turn around' is not in outer_door
+#    then test is failed
+# if ''
